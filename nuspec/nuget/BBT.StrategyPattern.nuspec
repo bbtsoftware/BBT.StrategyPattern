@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>BBT.StrategyPattern</id>
+    <title>BBT StrategyPattern</title>
+    <version>0.0.0</version>
+    <authors>BBT Software AG</authors>
+    <owners>bbtsoftware</owners>
+    <summary>A strategy pattern implementation for .NET.</summary>
+    <description>A strategy pattern implementation for .NET.</description>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/bbtsoftware/BBT.StrategyPattern/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/bbtsoftware/BBT.StrategyPattern/de51feaf705f283540a21b1cb7c317ed36cbd03e/nuspec/nuget/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <repository type="git" url="https://github.com/bbtsoftware/BBT.Maybe.git"/>
+    <copyright>Copyright © BBT Software AG</copyright>
+    <tags>Strategy Pattern</tags>
+    <releaseNotes>https://github.com/bbtsoftware/BBT.StrategyPattern/releases/tag/2.0.0</releaseNotes>
+  </metadata>
+  <files>
+    <file src="netstandard2.0\BBT.StrategyPattern.dll" target="lib\netstandard2.0" />
+    <file src="netstandard2.0\BBT.StrategyPattern.pdb" target="lib\netstandard2.0" />
+    <file src="netstandard2.0\BBT.StrategyPattern.xml" target="lib\netstandard2.0" />
+  </files>
+</package>
