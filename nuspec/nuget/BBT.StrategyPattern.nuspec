@@ -12,10 +12,10 @@
     <projectUrl>https://github.com/bbtsoftware/BBT.StrategyPattern/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/bbtsoftware/BBT.StrategyPattern/de51feaf705f283540a21b1cb7c317ed36cbd03e/nuspec/nuget/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <repository type="git" url="https://github.com/bbtsoftware/BBT.Maybe.git"/>
+    <repository type="git" url="https://github.com/bbtsoftware/BBT.StrategyPattern.git"/>
     <copyright>Copyright © BBT Software AG</copyright>
     <tags>Strategy Pattern</tags>
-    <releaseNotes>https://github.com/bbtsoftware/BBT.StrategyPattern/releases/tag/2.0.0</releaseNotes>
+    <releaseNotes>https://github.com/bbtsoftware/BBT.StrategyPattern/releases/tag/1.0.0</releaseNotes>
   </metadata>
   <files>
     <file src="netstandard2.0\BBT.StrategyPattern.dll" target="lib\netstandard2.0" />
