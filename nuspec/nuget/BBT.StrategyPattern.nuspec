@@ -10,7 +10,7 @@
     <description>A strategy pattern implementation for .NET.</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/bbtsoftware/BBT.StrategyPattern/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/bbtsoftware/BBT.StrategyPattern/de51feaf705f283540a21b1cb7c317ed36cbd03e/nuspec/nuget/icon.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/bbtsoftware/BBT.StrategyPattern/dfa1b06283f8e4d7dbd3793a3a4c2be7e2cff0c9/nuspec/nuget/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <repository type="git" url="https://github.com/bbtsoftware/BBT.StrategyPattern.git"/>
     <copyright>Copyright © BBT Software AG</copyright>
