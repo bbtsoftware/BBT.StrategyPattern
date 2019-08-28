@@ -23,7 +23,7 @@ BuildParameters.PrintParameters(Context);
 ToolSettings.SetToolSettings(
     context: Context,
     dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/BBT.StrategyPattern.Tests/*.cs" },
-    testCoverageFilter: "+[*]* -[xunit.*]* -[*.Tests]* -[Shouldly]*",
+    testCoverageFilter: "+[*]* -[xunit.*]* -[*.Tests]* -[FluentAssertions]*",
     testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
     testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
 
