@@ -23,7 +23,7 @@ namespace BBT.StrategyPattern.Tests
             // IoC registrations
             IKernel kernel = new StandardKernel();
 
-            kernel.Bind<IStrategyLocator<IOperatorStrategy>>().ToMethod((con) => new NinjectStrategyLocator<IOperatorStrategy>(kernel));
+            kernel.Bind(typeof(IStrategyLocator<>)).To(typeof(NinjectStrategyLocator<>));
 
             kernel.Bind<IOperatorStrategy>().To<AdditionStrategy>();
             kernel.Bind<IOperatorStrategy>().To<SubstractionStrategy>();
