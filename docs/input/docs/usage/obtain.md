@@ -4,8 +4,10 @@ Title: Obtain
 Description: Obtain BBT.StrategyPattern
 ---
 
-# Nuget
+# NuGet
 
-BBT.StrategyPattern is available as NuGet package. See [https://www.nuget.org/packages/BBT.StrategyPattern].
+Release and Beta versions of BBT.StrategyPattern are available from [nuget.org](https://www.nuget.org/packages/BBT.StrategyPattern)
 
-[https://www.nuget.org/packages/BBT.StrategyPattern]: https://www.nuget.org/packages/BBT.StrategyPattern
+<a class="btn btn-lg btn-success" href="https://www.nuget.org/packages/BBT.StrategyPattern" target="_blank">
+    <i class="fa fa-download fa-lg"></i> Get from nuget.org
+</a>
