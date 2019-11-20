@@ -39,62 +39,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"IGenericStrategyProvider",
-            content:"IGenericStrategyProvider",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/IGenericStrategyProvider_2',
-            title:"IGenericStrategyProvider<TStrategy, TCriterion>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
-            title:"IInstanceCreator",
-            content:"IInstanceCreator",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/IInstanceCreator_2',
-            title:"IInstanceCreator<TInterface, TClass>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"IGenericStrategy",
-            content:"IGenericStrategy",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/IGenericStrategy_1',
-            title:"IGenericStrategy<T>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
-            title:"GenericInstanceCreator",
-            content:"GenericInstanceCreator",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/GenericInstanceCreator_2',
-            title:"GenericInstanceCreator<TInterface, TClass>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:4,
             title:"IStrategyLocator",
             content:"IStrategyLocator",
             description:'',
@@ -108,7 +52,35 @@ var searchModule = function() {
     );
     a(
         {
-            id:5,
+            id:1,
+            title:"IGenericStrategyProvider",
+            content:"IGenericStrategyProvider",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/IGenericStrategyProvider_2',
+            title:"IGenericStrategyProvider<TStrategy, TCriterion>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:2,
+            title:"IInstanceCreator",
+            content:"IInstanceCreator",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/IInstanceCreator_2',
+            title:"IInstanceCreator<TInterface, TClass>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:3,
             title:"GenericStrategyProvider",
             content:"GenericStrategyProvider",
             description:'',
@@ -117,6 +89,34 @@ var searchModule = function() {
         {
             url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/GenericStrategyProvider_2',
             title:"GenericStrategyProvider<TStrategy, TCriterion>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
+            title:"IGenericStrategy",
+            content:"IGenericStrategy",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/IGenericStrategy_1',
+            title:"IGenericStrategy<T>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
+            title:"GenericInstanceCreator",
+            content:"GenericInstanceCreator",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/GenericInstanceCreator_2',
+            title:"GenericInstanceCreator<TInterface, TClass>",
             description:""
         }
     );

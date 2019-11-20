@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/BBT.StrategyPattern/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/BBT.StrategyPattern/assets/img/favicon.ico" type="image/x-icon">
+        <title>BBT.StrategyPattern - Fundamentals of strategy pattern</title>
+        <link href="/BBT.StrategyPattern/assets/css/highlight.css" rel="stylesheet">
+        <link href="/BBT.StrategyPattern/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/BBT.StrategyPattern/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/BBT.StrategyPattern/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/BBT.StrategyPattern/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/BBT.StrategyPattern/assets/css/override.css" rel="stylesheet">
+        <script src="/BBT.StrategyPattern/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/BBT.StrategyPattern/assets/js/bootstrap.min.js"></script>        
+        <script src="/BBT.StrategyPattern/assets/js/app.min.js"></script>         
+        <script src="/BBT.StrategyPattern/assets/js/highlight.pack.js"></script>   
+        <script src="/BBT.StrategyPattern/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/BBT.StrategyPattern/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/BBT.StrategyPattern/assets/js/mermaid.min.js"></script>
+        <script src="/BBT.StrategyPattern/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/BBT.StrategyPattern/assets/js/html5shiv.min.js"></script>
+        <script src="/BBT.StrategyPattern/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/BBT.StrategyPattern/" class="logo">
+                            <span>BBT.StrategyPattern</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/BBT.StrategyPattern/docs">Documentation</a></li>
+        <li><a href="/BBT.StrategyPattern/api/BBT.StrategyPattern">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+        <div><p><a href="https://github.com/bbtsoftware/BBT.StrategyPattern/tree/develop/docs/input/docs/getting-started/fundamentals.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"></div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview active">
+                    <a href="/BBT.StrategyPattern/docs/getting-started">Getting Started</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/BBT.StrategyPattern/docs/getting-started/whystrategypattern">Why does BBT.StrategyPattern exist?</a></li>
+                <li><a href="/BBT.StrategyPattern/docs/getting-started/principles">Core principles</a></li>
+                <li class="selected"><a href="/BBT.StrategyPattern/docs/getting-started/fundamentals">Fundamentals of strategy pattern</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/BBT.StrategyPattern/docs/usage">Usage</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/BBT.StrategyPattern/docs/usage/obtain">Obtain</a></li>
+                <li><a href="/BBT.StrategyPattern/docs/usage/use-without-ioc">Use without IoC</a></li>
+                <li><a href="/BBT.StrategyPattern/docs/usage/use-with-ioc">Use with IoC</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Fundamentals of strategy pattern</h1>
+		</section>
+	<section class="content">
+		<h2 id="case-study-the-switch-case-block">Case study: The Switch Case Block</h2>
+<p>A lot of documentation and tutorials exist explaining the implementation of the strategy pattern.
+For an overview see <a href="https://en.wikipedia.org/wiki/Strategy_pattern">Strategy pattern (wikipedia)</a>, at least the chapter of <a href="https://en.wikipedia.org/wiki/Strategy_pattern#Strategy_and_open.2Fclosed_principle">Strategy and open/closed principle</a> is recommended to read.
+The approach of this fundamentals article is to introduce and explain the concepts and reasons of strategy pattern based on a case study: The refactoring of a switch case block.
+Many code bases contain distinction of cases implemented by switch case blocks. Those implementations have numerous issues.</p>
+<h3 id="violation-of-openclose-principle">Violation of open/close principle</h3>
+<p>See also <a href="https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle">Open/close principle (wikipedia)</a>. An appropriate class design supports the enhancement of functionality (open for extension) without changing the class itself (closed for modification).
+Switch case blocks do not fulfill this principle.</p>
+<pre><code class="language-csharp">public void Foo(FooEnum fooEnum)
+{
+    switch (fooEnum)
+        case FooEnum.Foo1:
+            Bar1();
+            break;
+        case FooEnum.Foo2:
+            Bar2();
+            break;
+        default:
+            throw new NotImplementedException();
+    }
+}
+</code></pre>
+<p>If the FooEnum is extended by further enum values, the switch case block must be modified as well.</p>
+<h3 id="violation-of-single-responsibility-principle">Violation of single responsibility principle</h3>
+<p>See also <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">Single responsibility principle (wikipedia)</a>. The switch case block from the example above does two things.</p>
+<ol>
+<li>A distinction of cases based on the enum values</li>
+<li>The execution of the enum specific methods</li>
+</ol>
+<p>As a consequence two reasons exist to modify this method.</p>
+<ol>
+<li>new enum value are added</li>
+<li>the enum specific method calls change</li>
+</ol>
+<p>Therefore the single responsibility principle is violated and consequently the reusability is limited.
+Neither the distinction of cases nor the code within the case blocks could be used separately.</p>
+<h3 id="maintainability">Maintainability</h3>
+<p>Most likely the above mentioned distinction of cases happens in multiple code areas.
+Each time the FooEnum is extended all those areas must be modified and extended as well.
+As a consequence effort increases. Without appropriate test coverage code stability decreases.
+This are the main reasons why distinction of cases should be centralized and separated from executing code.</p>
+<h3 id="readability-and-code-structure">Readability and code structure</h3>
+<p>To fully understand the switch case block from the example above the whole block must be analyzed. Each case section can be freely implemented.
+The case section has no limitations and can access all members and variables within the method scope. The code has a lack of structure.</p>
+<h2 id="improvement-use-strategy">Improvement: Use strategy</h2>
+<p>As a first step the functionality of the case sections should be separated into classes. Those classes should be structured by implementing a common interface.</p>
+<pre><code class="language-csharp">public interface IFooStrategy
+{
+    void Bar();
+}
+</code></pre>
+<p>This interface is implemented by each class:</p>
+<pre><code class="language-csharp">public class Foo1Strategy : IFooStrategy
+{
+    public void Bar()
+    {
+        ...
+    }
+}
+</code></pre>
+<p>Access to those strategies is provided by a StrategyProvider:</p>
+<pre><code class="language-csharp">public class FooStrategyProvider
+{
+    public IFooStrategy GetStrategy(FooEnum fooEnum)
+    {
+        switch (fooEnum)
+        {
+            case FooEnum.Foo1:
+                return new Foo1Strategy();
+            case FooEnum.Foo2:
+                return new Foo2Strategy();
+                ...
+            default:
+                throw new NotImplementedException();
+        }
+    }
+}
+</code></pre>
+<p>Usage of the strategy within the original method:</p>
+<pre><code class="language-csharp">public class Foo
+{
+    private readonly FooStrategyProvider FooStrategyProvider = new FooStrategyProvider();
+
+    public void Foo(FooEnum fooEnum)
+    {
+        var barStrategy = this.FooStrategyFactory.GetStrategy(fooEnum);
+        barStrategy.Bar();
+    }
+}
+</code></pre>
+<h3 id="improvements-with-strategy-usage">Improvements with strategy usage</h3>
+<h4 id="single-responsibility-principle">Single responsibility principle</h4>
+<p>With the introduction of FooStrategyFactory the distinction of cases is moved into its own class and separated from execution logic in case blocks.
+This leads to higher chance of reuse. If other areas of code also need a distinction based on FooEnum, the FooStrategyFactory can be reused.</p>
+<h4 id="maintainability-1">Maintainability</h4>
+<p>Because the switch case block of FooEnum is centralized by FooStrategyFactory, maintainability and code stability is improved.
+Enhancements on FooEnum affects only this single existing class (and the implementation of a new FooStrategy).</p>
+<h4 id="readability-and-code-structure-1">Readability and code structure</h4>
+<p>After the refactoring the original method became explicit, structured and focused on the Bar method call.</p>
+<h3 id="issues">Issues</h3>
+<h4 id="violation-of-openclosed-principle">Violation of open/closed principle</h4>
+<p>The strategy factory still consist of the switch case block. If the FooEnum is enhanced the GetStrategy method must still be modified as well.</p>
+<h4 id="violation-of-single-responsibility-principle-1">Violation of single responsibility principle</h4>
+<p>Besides the strategy selection the implementation of the FooStrategyFactory has another responsibility: The instantiation of the strategy instance.
+This aspect should be separated and should have its own realization. There are third party libraries available for object instantiation.
+Commonly used are IoC-containers. With those containers the behaviour of object lifecycle (e.g. transient, singleton) can be declared and therefore delegated to those libraries.</p>
+<h2 id="improvement-use-generic-strategy-and-and-provider">Improvement: Use generic strategy and and provider</h2>
+<p>BBT.StrategyPattern defines an interface for declaration of strategies based on a generic type parameter.</p>
+<pre><code class="language-csharp">public interface <a href="/BBT.StrategyPattern/api/BBT.StrategyPattern/IGenericStrategy_1">IGenericStrategy&lt;T&gt;</a>
+{
+    bool IsResponsible(T criterion);
+}
+</code></pre>
+<p>By implementing IsResponsible each strategy itself defines for which criterion it is responsible. The concrete implementation of FooStrategy changes to:</p>
+<pre><code class="language-csharp">public class Foo1Strategy : IFooStrategy
+{
+    public bool IsResponsible(FooEnum fooEnum)
+    {
+        return fooEnum == FooEnum.Foo1;
+    }
+
+    public void Bar()
+    {
+        ...
+    }
+}
+</code></pre>
+<p>BBT.StrategyPattern provides a generic strategy provider which can be used to resolve the specific strategy based on the strategy's IsResponsible predicate.
+BBT.StrategyPattern's generic strategy provider consults the IStrategyLocator interface to get all concrete strategies implementing the concerned strategy interface.
+The IStrategyLocator interface must be implemented, most commonly by using an IoC-container infrastructure.</p>
+<p>Using BBT.StrategyPattern the example above can be refined to:</p>
+<pre><code class="language-csharp">public class Foo
+{
+    private readonly FooStrategyProvider FooStrategyProvider;
+
+    // Constructor injection of generic strategy provider, common for IoC / dependency injection framework.
+    public Foo(IGenericStrategyProvider&lt;IFooStrategy, FooEnum&gt; fooStrategyProvider)
+    {
+        this.FooStrategyProvider = fooStrategyProvider;
+    }
+
+    public void Foo(FooEnum fooEnum)
+    {
+        var barStrategy = this.FooStrategyProvider.GetStrategy(fooEnum);
+        barStrategy.Bar();
+    }
+}
+</code></pre>
+<p>How the strategies are obtained lies in responsibility of IStrategyLocator and IoC framework.
+Using ninject it could look like:</p>
+<pre><code class="language-csharp">// IoC registrations
+IKernel kernel = new StandardKernel();
+
+// Generic type unbound registration of strategy locator.
+// When resolved a locator object of concrete generic type is instantiated.
+kernel.Bind(typeof(IStrategyLocator&lt;&gt;)).To(typeof(NinjectStrategyLocator&lt;&gt;));
+
+// Bindings of the foo strategy implementations.
+kernel.Bind&lt;IFooStrategy&gt;().To&lt;Foo1Strategy&gt;();
+kernel.Bind&lt;IFooStrategy&gt;().To&lt;Foo2Strategy&gt;();
+</code></pre>
+<h3 id="improvements-with-generic-strategy-and-generic-strategy-provider-usage">Improvements with generic strategy and generic strategy provider usage</h3>
+<h4 id="openclosed-principle">Open/closed principle</h4>
+<p>When FooEnum is enhanced, with the generic strategy provider, additional strategies can be added without modifying existing classes.
+As soon as the new strategies are registered in the IoC container, the provider is extended.</p>
+<h4 id="single-responsibility-principle-1">Single responsibility principle</h4>
+<p>The generic provider has one single responsibility: Providing the requested strategy. How this strategy is instantiated is separated and handled be the strategy locator (i.e. IoC container).</p>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    Copyright © <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/bbtsoftware/BBT.StrategyPattern/graphs/contributors" target="_blank">contributors</a>.
+    <br>
+    Website generated by <a href="http://wyam.io" target="_blank">Wyam</a>
+</p>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/bbtsoftware/BBT.StrategyPattern" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+<script type="text/javascript" src="/BBT.StrategyPattern/assets/js/anchor.min.js"></script>
+<script type="text/javascript" src="/BBT.StrategyPattern/assets/js/clipboard.min.js"></script>
+<script type="text/javascript">
+    anchors.options.placement = 'left';
+    anchors.add('#content > h1,h2,h3,h4');
+
+    var snippets = document.querySelectorAll("pre > code");
+    [].forEach.call(snippets, function(snippet) {
+        snippet.insertAdjacentHTML("beforebegin", "<button class='btn-copy' data-clipboard-snippet><img class='clippy' width=13 src='/BBT.StrategyPattern/assets/images/clippy.svg' alt='Copy to clipboard'></button>");
+    });
+    var clipboardSnippets = new Clipboard('[data-clipboard-snippet]', {
+        target: function(trigger) {
+            return trigger.nextElementSibling;
+        }
+    });
+    clipboardSnippets.on('success', function(e) {
+        e.clearSelection();
+        showTooltip(e.trigger, "Copied!");
+    });
+    clipboardSnippets.on('error', function(e) {
+        showTooltip(e.trigger, fallbackMessage(e.action));
+    });
+    var btns = document.querySelectorAll('.btn-copy');
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('mouseleave', function(e) {
+            e.currentTarget.setAttribute('class', 'btn-copy');
+            e.currentTarget.removeAttribute('aria-label');
+        });
+    }    
+    function showTooltip(elem, msg) {
+        elem.setAttribute('class', 'btn-copy tooltipped tooltipped-s');
+        elem.setAttribute('aria-label', msg);
+    }
+    function fallbackMessage(action) {
+        var actionMsg = '';
+        var actionKey = (action === 'cut' ? 'X' : 'C');
+        if (/iPhone|iPad/i.test(navigator.userAgent)) {
+            actionMsg = 'No support :(';
+        } else if (/Mac/i.test(navigator.userAgent)) {
+            actionMsg = 'Press ⌘-' + actionKey + ' to ' + action;
+        } else {
+            actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
+        }
+        return actionMsg;
+    }        
+</script>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>
