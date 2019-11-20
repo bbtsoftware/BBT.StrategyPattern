@@ -1,5 +1,5 @@
 ---
-Order: 10
+Order: 20
 Title: Use without IoC
 Description: Example how to use BBT.StrategyPattern without IoC.
 ---

@@ -1,5 +1,5 @@
 ---
-Order: 20
+Order: 30
 Title: Use with IoC
 Description: Example how to use BBT.StrategyPattern with IoC.
 ---
@@ -13,9 +13,7 @@ public void WorksWithIocNinject()
 
     IKernel kernel = new StandardKernel();
 
-    kernel
-        .Bind<IStrategyLocator<IOperatorStrategy>>()
-        .ToMethod((con) => new NinjectStrategyLocator<IOperatorStrategy>(kernel));
+    kernel.Bind(typeof(IStrategyLocator<>)).To(typeof(NinjectStrategyLocator<>));
 
     kernel
         .Bind<IOperatorStrategy>()
