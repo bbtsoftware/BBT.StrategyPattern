@@ -10,13 +10,13 @@ The library introduces an `IGenericStrategy<T>` which needs to be implemented fo
 The instances of the `IGenericStrategy<T>` are managed by the `IGenericStrategyProvider<out TStrategy, in TCriterion>` which resolves the correct implementation for the given criterion.
 The generic parameter acts as selection criterion and declares the responsibility of the specific strategy.
 
-## Advantages
+# Advantages
 
 * The generic strategy interface leads to more structured code.
 * Based on their generic type parameter, strategies are categorized and make their responsibility explicit. As a consequence this leads to higher chance of reuse and better readable code.
 * The implementation is driven by SOLID principles like open/closed, single responsibility and dependency inversion. For further explanations see [Fundamentals of strategy pattern].
 
-## Implementation details
+# Implementation details
 
 * Introduces a generic strategy interface
 * The generic parameter represents the criterion for the selection of the specific strategy

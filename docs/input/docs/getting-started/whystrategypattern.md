@@ -6,7 +6,7 @@ Description: Introduction to BBT.StrategyPattern, what problems are solved and h
 
 BBT.StrategyPattern is a generic implementation of the strategy design pattern.
 
-## Features
+# Features
 
 * Support the usage of strategies with no need to implement specific strategy factories
 * Provide a generic strategy provider based on generics
