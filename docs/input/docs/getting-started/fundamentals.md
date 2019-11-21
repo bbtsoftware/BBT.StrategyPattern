@@ -20,6 +20,7 @@ Switch case blocks do not fulfill this principle.
 public void Foo(FooEnum fooEnum)
 {
     switch (fooEnum)
+    {
         case FooEnum.Foo1:
             Bar1();
             break;
@@ -114,7 +115,7 @@ public class Foo
 
     public void Foo(FooEnum fooEnum)
     {
-        var barStrategy = this.FooStrategyFactory.GetStrategy(fooEnum);
+        var barStrategy = this.FooStrategyProvider.GetStrategy(fooEnum);
         barStrategy.Bar();
     }
 }
@@ -148,7 +149,7 @@ Besides the strategy selection the implementation of the FooStrategyFactory has 
 This aspect should be separated and should have its own realization. There are third party libraries available for object instantiation.
 Commonly used are IoC-containers. With those containers the behaviour of object lifecycle (e.g. transient, singleton) can be declared and therefore delegated to those libraries.
 
-# Improvement: Use generic strategy and and provider
+# Improvement: Use generic strategy and provider
 
 BBT.StrategyPattern defines an interface for declaration of strategies based on a generic type parameter.
 
