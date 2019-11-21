@@ -72,7 +72,10 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
         <div><p><a href="https://github.com/bbtsoftware/BBT.StrategyPattern/tree/develop/docs/input/docs/getting-started/principles.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#advantages">Advantages</a></p>
+<p><a href="#implementation-details">Implementation details</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -123,13 +126,13 @@ This infrastructure introduces a generic strategy interface managed by the gener
 The library introduces an <code><a href="/BBT.StrategyPattern/api/BBT.StrategyPattern/IGenericStrategy_1">IGenericStrategy&lt;T&gt;</a></code> which needs to be implemented for every case a strategy with a given criterion is supporting.
 The instances of the <code><a href="/BBT.StrategyPattern/api/BBT.StrategyPattern/IGenericStrategy_1">IGenericStrategy&lt;T&gt;</a></code> are managed by the <code>IGenericStrategyProvider&lt;out TStrategy, in TCriterion&gt;</code> which resolves the correct implementation for the given criterion.
 The generic parameter acts as selection criterion and declares the responsibility of the specific strategy.</p>
-<h2 id="advantages">Advantages</h2>
+<h1 id="advantages">Advantages</h1>
 <ul>
 <li>The generic strategy interface leads to more structured code.</li>
 <li>Based on their generic type parameter, strategies are categorized and make their responsibility explicit. As a consequence this leads to higher chance of reuse and better readable code.</li>
 <li>The implementation is driven by SOLID principles like open/closed, single responsibility and dependency inversion. For further explanations see <a href="./fundamentals">Fundamentals of strategy pattern</a>.</li>
 </ul>
-<h2 id="implementation-details">Implementation details</h2>
+<h1 id="implementation-details">Implementation details</h1>
 <ul>
 <li>Introduces a generic strategy interface</li>
 <li>The generic parameter represents the criterion for the selection of the specific strategy</li>

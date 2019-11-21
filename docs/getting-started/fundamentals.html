@@ -72,7 +72,11 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
         <div><p><a href="https://github.com/bbtsoftware/BBT.StrategyPattern/tree/develop/docs/input/docs/getting-started/fundamentals.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#case-study-the-switch-case-block">Case study: The Switch Case Block</a></p>
+<p><a href="#improvement-use-strategy">Improvement: Use strategy</a></p>
+<p><a href="#improvement-use-generic-strategy-and-and-provider">Improvement: Use generic strategy and and provider</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -118,12 +122,12 @@
 			<h1>Fundamentals of strategy pattern</h1>
 		</section>
 	<section class="content">
-		<h2 id="case-study-the-switch-case-block">Case study: The Switch Case Block</h2>
+		<h1 id="case-study-the-switch-case-block">Case study: The Switch Case Block</h1>
 <p>A lot of documentation and tutorials exist explaining the implementation of the strategy pattern.
 For an overview see <a href="https://en.wikipedia.org/wiki/Strategy_pattern">Strategy pattern (wikipedia)</a>, at least the chapter of <a href="https://en.wikipedia.org/wiki/Strategy_pattern#Strategy_and_open.2Fclosed_principle">Strategy and open/closed principle</a> is recommended to read.
 The approach of this fundamentals article is to introduce and explain the concepts and reasons of strategy pattern based on a case study: The refactoring of a switch case block.
 Many code bases contain distinction of cases implemented by switch case blocks. Those implementations have numerous issues.</p>
-<h3 id="violation-of-openclose-principle">Violation of open/close principle</h3>
+<h2 id="violation-of-openclose-principle">Violation of open/close principle</h2>
 <p>See also <a href="https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle">Open/close principle (wikipedia)</a>. An appropriate class design supports the enhancement of functionality (open for extension) without changing the class itself (closed for modification).
 Switch case blocks do not fulfill this principle.</p>
 <pre><code class="language-csharp">public void Foo(FooEnum fooEnum)
@@ -141,7 +145,7 @@ Switch case blocks do not fulfill this principle.</p>
 }
 </code></pre>
 <p>If the FooEnum is extended by further enum values, the switch case block must be modified as well.</p>
-<h3 id="violation-of-single-responsibility-principle">Violation of single responsibility principle</h3>
+<h2 id="violation-of-single-responsibility-principle">Violation of single responsibility principle</h2>
 <p>See also <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">Single responsibility principle (wikipedia)</a>. The switch case block from the example above does two things.</p>
 <ol>
 <li>A distinction of cases based on the enum values</li>
@@ -154,15 +158,15 @@ Switch case blocks do not fulfill this principle.</p>
 </ol>
 <p>Therefore the single responsibility principle is violated and consequently the reusability is limited.
 Neither the distinction of cases nor the code within the case blocks could be used separately.</p>
-<h3 id="maintainability">Maintainability</h3>
+<h2 id="maintainability">Maintainability</h2>
 <p>Most likely the above mentioned distinction of cases happens in multiple code areas.
 Each time the FooEnum is extended all those areas must be modified and extended as well.
 As a consequence effort increases. Without appropriate test coverage code stability decreases.
 This are the main reasons why distinction of cases should be centralized and separated from executing code.</p>
-<h3 id="readability-and-code-structure">Readability and code structure</h3>
+<h2 id="readability-and-code-structure">Readability and code structure</h2>
 <p>To fully understand the switch case block from the example above the whole block must be analyzed. Each case section can be freely implemented.
 The case section has no limitations and can access all members and variables within the method scope. The code has a lack of structure.</p>
-<h2 id="improvement-use-strategy">Improvement: Use strategy</h2>
+<h1 id="improvement-use-strategy">Improvement: Use strategy</h1>
 <p>As a first step the functionality of the case sections should be separated into classes. Those classes should be structured by implementing a common interface.</p>
 <pre><code class="language-csharp">public interface IFooStrategy
 {
@@ -208,23 +212,23 @@ The case section has no limitations and can access all members and variables wit
     }
 }
 </code></pre>
-<h3 id="improvements-with-strategy-usage">Improvements with strategy usage</h3>
+<h2 id="improvements-with-strategy-usage">Improvements with strategy usage</h2>
 <h4 id="single-responsibility-principle">Single responsibility principle</h4>
 <p>With the introduction of FooStrategyFactory the distinction of cases is moved into its own class and separated from execution logic in case blocks.
 This leads to higher chance of reuse. If other areas of code also need a distinction based on FooEnum, the FooStrategyFactory can be reused.</p>
-<h4 id="maintainability-1">Maintainability</h4>
+<h3 id="maintainability-1">Maintainability</h3>
 <p>Because the switch case block of FooEnum is centralized by FooStrategyFactory, maintainability and code stability is improved.
 Enhancements on FooEnum affects only this single existing class (and the implementation of a new FooStrategy).</p>
-<h4 id="readability-and-code-structure-1">Readability and code structure</h4>
+<h3 id="readability-and-code-structure-1">Readability and code structure</h3>
 <p>After the refactoring the original method became explicit, structured and focused on the Bar method call.</p>
-<h3 id="issues">Issues</h3>
-<h4 id="violation-of-openclosed-principle">Violation of open/closed principle</h4>
+<h2 id="issues">Issues</h2>
+<h3 id="violation-of-openclosed-principle">Violation of open/closed principle</h3>
 <p>The strategy factory still consist of the switch case block. If the FooEnum is enhanced the GetStrategy method must still be modified as well.</p>
-<h4 id="violation-of-single-responsibility-principle-1">Violation of single responsibility principle</h4>
+<h3 id="violation-of-single-responsibility-principle-1">Violation of single responsibility principle</h3>
 <p>Besides the strategy selection the implementation of the FooStrategyFactory has another responsibility: The instantiation of the strategy instance.
 This aspect should be separated and should have its own realization. There are third party libraries available for object instantiation.
 Commonly used are IoC-containers. With those containers the behaviour of object lifecycle (e.g. transient, singleton) can be declared and therefore delegated to those libraries.</p>
-<h2 id="improvement-use-generic-strategy-and-and-provider">Improvement: Use generic strategy and and provider</h2>
+<h1 id="improvement-use-generic-strategy-and-and-provider">Improvement: Use generic strategy and and provider</h1>
 <p>BBT.StrategyPattern defines an interface for declaration of strategies based on a generic type parameter.</p>
 <pre><code class="language-csharp">public interface <a href="/BBT.StrategyPattern/api/BBT.StrategyPattern/IGenericStrategy_1">IGenericStrategy&lt;T&gt;</a>
 {
@@ -279,11 +283,11 @@ kernel.Bind(typeof(IStrategyLocator&lt;&gt;)).To(typeof(NinjectStrategyLocator&l
 kernel.Bind&lt;IFooStrategy&gt;().To&lt;Foo1Strategy&gt;();
 kernel.Bind&lt;IFooStrategy&gt;().To&lt;Foo2Strategy&gt;();
 </code></pre>
-<h3 id="improvements-with-generic-strategy-and-generic-strategy-provider-usage">Improvements with generic strategy and generic strategy provider usage</h3>
-<h4 id="openclosed-principle">Open/closed principle</h4>
+<h2 id="improvements-with-generic-strategy-and-generic-strategy-provider-usage">Improvements with generic strategy and generic strategy provider usage</h2>
+<h3 id="openclosed-principle">Open/closed principle</h3>
 <p>When FooEnum is enhanced, with the generic strategy provider, additional strategies can be added without modifying existing classes.
 As soon as the new strategies are registered in the IoC container, the provider is extended.</p>
-<h4 id="single-responsibility-principle-1">Single responsibility principle</h4>
+<h3 id="single-responsibility-principle-1">Single responsibility principle</h3>
 <p>The generic provider has one single responsibility: Providing the requested strategy. How this strategy is instantiated is separated and handled be the strategy locator (i.e. IoC container).</p>
 
 	</section>
