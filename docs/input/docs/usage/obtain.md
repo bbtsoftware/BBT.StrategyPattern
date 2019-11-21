@@ -4,7 +4,7 @@ Title: Obtain
 Description: Obtain BBT.StrategyPattern
 ---
 
-## Nuget
+# Nuget
 
 BBT.StrategyPattern is available as NuGet package. See [https://www.nuget.org/packages/BBT.StrategyPattern].
 
