@@ -39,20 +39,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"GenericInstanceCreator",
-            content:"GenericInstanceCreator",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/GenericInstanceCreator_2',
-            title:"GenericInstanceCreator<TInterface, TClass>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
             title:"IGenericStrategy",
             content:"IGenericStrategy",
             description:'',
@@ -66,21 +52,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:2,
-            title:"GenericStrategyProvider",
-            content:"GenericStrategyProvider",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/GenericStrategyProvider_2',
-            title:"GenericStrategyProvider<TStrategy, TCriterion>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
+            id:1,
             title:"IInstanceCreator",
             content:"IInstanceCreator",
             description:'',
@@ -94,7 +66,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:4,
+            id:2,
             title:"IGenericStrategyProvider",
             content:"IGenericStrategyProvider",
             description:'',
@@ -108,7 +80,21 @@ var searchModule = function() {
     );
     a(
         {
-            id:5,
+            id:3,
+            title:"GenericStrategyProvider",
+            content:"GenericStrategyProvider",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/GenericStrategyProvider_2',
+            title:"GenericStrategyProvider<TStrategy, TCriterion>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
             title:"IStrategyLocator",
             content:"IStrategyLocator",
             description:'',
@@ -117,6 +103,20 @@ var searchModule = function() {
         {
             url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/IStrategyLocator_1',
             title:"IStrategyLocator<TStrategy>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
+            title:"GenericInstanceCreator",
+            content:"GenericInstanceCreator",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/GenericInstanceCreator_2',
+            title:"GenericInstanceCreator<TInterface, TClass>",
             description:""
         }
     );
