@@ -53,14 +53,14 @@ var searchModule = function() {
     a(
         {
             id:1,
-            title:"IInstanceCreator",
-            content:"IInstanceCreator",
+            title:"GenericInstanceCreator",
+            content:"GenericInstanceCreator",
             description:'',
             tags:''
         },
         {
-            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/IInstanceCreator_2',
-            title:"IInstanceCreator<TInterface, TClass>",
+            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/GenericInstanceCreator_2',
+            title:"GenericInstanceCreator<TInterface, TClass>",
             description:""
         }
     );
@@ -95,6 +95,20 @@ var searchModule = function() {
     a(
         {
             id:4,
+            title:"IInstanceCreator",
+            content:"IInstanceCreator",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/IInstanceCreator_2',
+            title:"IInstanceCreator<TInterface, TClass>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
             title:"IStrategyLocator",
             content:"IStrategyLocator",
             description:'',
@@ -103,20 +117,6 @@ var searchModule = function() {
         {
             url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/IStrategyLocator_1',
             title:"IStrategyLocator<TStrategy>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:5,
-            title:"GenericInstanceCreator",
-            content:"GenericInstanceCreator",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/BBT.StrategyPattern/api/BBT.StrategyPattern/GenericInstanceCreator_2',
-            title:"GenericInstanceCreator<TInterface, TClass>",
             description:""
         }
     );

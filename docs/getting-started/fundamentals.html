@@ -74,7 +74,7 @@
         <div><p><a href="https://github.com/bbtsoftware/BBT.StrategyPattern/tree/develop/docs/input/docs/getting-started/fundamentals.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"><h6>On This Page</h6><p><a href="#case-study-the-switch-case-block">Case study: The Switch Case Block</a></p>
 <p><a href="#improvement-use-strategy">Improvement: Use strategy</a></p>
-<p><a href="#improvement-use-generic-strategy-and-and-provider">Improvement: Use generic strategy and and provider</a></p>
+<p><a href="#improvement-use-generic-strategy-and-provider">Improvement: Use generic strategy and provider</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -133,6 +133,7 @@ Switch case blocks do not fulfill this principle.</p>
 <pre><code class="language-csharp">public void Foo(FooEnum fooEnum)
 {
     switch (fooEnum)
+    {
         case FooEnum.Foo1:
             Bar1();
             break;
@@ -207,7 +208,7 @@ The case section has no limitations and can access all members and variables wit
 
     public void Foo(FooEnum fooEnum)
     {
-        var barStrategy = this.FooStrategyFactory.GetStrategy(fooEnum);
+        var barStrategy = this.FooStrategyProvider.GetStrategy(fooEnum);
         barStrategy.Bar();
     }
 }
@@ -228,7 +229,7 @@ Enhancements on FooEnum affects only this single existing class (and the impleme
 <p>Besides the strategy selection the implementation of the FooStrategyFactory has another responsibility: The instantiation of the strategy instance.
 This aspect should be separated and should have its own realization. There are third party libraries available for object instantiation.
 Commonly used are IoC-containers. With those containers the behaviour of object lifecycle (e.g. transient, singleton) can be declared and therefore delegated to those libraries.</p>
-<h1 id="improvement-use-generic-strategy-and-and-provider">Improvement: Use generic strategy and and provider</h1>
+<h1 id="improvement-use-generic-strategy-and-provider">Improvement: Use generic strategy and provider</h1>
 <p>BBT.StrategyPattern defines an interface for declaration of strategies based on a generic type parameter.</p>
 <pre><code class="language-csharp">public interface <a href="/BBT.StrategyPattern/api/BBT.StrategyPattern/IGenericStrategy_1">IGenericStrategy&lt;T&gt;</a>
 {
