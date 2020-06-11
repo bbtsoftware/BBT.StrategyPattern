@@ -3,7 +3,6 @@
 namespace BBT.StrategyPattern
 {
     using System;
-    using System.Globalization;
     using System.Linq;
 
     /// <summary>
