@@ -7,7 +7,7 @@ namespace BBT.StrategyPattern
     using System.Linq;
 
     /// <summary>
-    /// See <see cref="IGenericStrategyProvider{TStrategy,TCriterion}"/>.
+    /// Generic implementation of <see cref="IGenericStrategyProvider{TStrategy,TCriterion}"/>.
     /// </summary>
     /// <typeparam name="TStrategy">See link above.</typeparam>
     /// <typeparam name="TCriterion">See link above.</typeparam>
@@ -26,11 +26,7 @@ namespace BBT.StrategyPattern
             this.strategyLocator = strategyLocator ?? throw new ArgumentNullException(nameof(strategyLocator));
         }
 
-        /// <summary>
-        /// See <see cref="IGenericStrategyProvider{TStrategy,TCriterion}.GetStrategy"/>.
-        /// </summary>
-        /// <param name="criterion">See <see cref="IGenericStrategyProvider{TStrategy,TCriterion}.GetStrategy"/>.</param>
-        /// <returns>See <see cref="IGenericStrategyProvider{TStrategy,TCriterion}.GetStrategy"/>.</returns>
+        /// <inheritdoc/>
         public TStrategy GetStrategy(TCriterion criterion)
         {
             var strategies = this.strategyLocator.GetAllStrategies();

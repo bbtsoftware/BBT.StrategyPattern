@@ -11,10 +11,7 @@ namespace BBT.StrategyPattern
         where TInterface : class
         where TClass : TInterface, new()
     {
-        /// <summary>
-        /// See <see cref="IInstanceCreator{TInterface, TClass}.Create"/>.
-        /// </summary>
-        /// <returns>A new instance of <typeparamref name="TClass"/>.</returns>
+        /// <inheritdoc/>
         public TInterface Create()
         {
             return new TClass();
