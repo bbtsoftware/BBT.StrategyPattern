@@ -33,10 +33,4 @@
     <ProjectReference Include="..\BBT.StrategyPattern\BBT.StrategyPattern.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="System">
-      <HintPath>System</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
