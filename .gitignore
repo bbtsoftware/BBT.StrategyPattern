@@ -326,6 +326,3 @@ ASALocalRun/
 .mfractor/
 
 # Project specific 
-
-config.wyam.*
-BuildArtifacts/
