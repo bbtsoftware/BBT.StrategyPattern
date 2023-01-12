@@ -21,16 +21,28 @@ An strategy pattern implementation for .NET.
 
 [![Coverage Status](https://coveralls.io/repos/github/bbtsoftware/BBT.StrategyPattern/badge.svg?branch=develop)](https://coveralls.io/github/bbtsoftware/BBT.StrategyPattern?branch=develop)
 
-## Quick Links
+## Documentation
 
-* [Documentation](https://bbtsoftware.github.io/BBT.StrategyPattern/)
+### Getting started
+
+Overview about the features of BBT.StrategyPattern.
+
+* [Why does BBT.StrategyPattern exist?](./docs/getting-started/whystrategypattern.md)
+* [Core principles](./docs/getting-started/principles.md)
+* [Fundamentals](./docs/getting-started/fundamentals.md)
+
+### Usage
+
+How to obtain, configure, and use BBT.StrategyPattern.
+
+* [Obtain](./docs/usage/obtain.md)
+* [Use with IoC](./docs/usage/use-with-ioc.md)
+* [Use without IoC](./docs/usage/use-without-ioc.md)
 
 ## Build
-
-To build this package we are using [Cake](https://cakebuild.net).
 
 On Windows PowerShell run:
 
 ```powershell
-./build
+`dotnet build .\src\BBT.StrategyPattern.sln`
 ```

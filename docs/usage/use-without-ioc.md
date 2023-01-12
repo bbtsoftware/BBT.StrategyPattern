@@ -1,8 +1,6 @@
----
-Order: 20
-Title: Use without IoC
-Description: Example how to use BBT.StrategyPattern without IoC.
----
+# Use without IoC
+
+Example how to use BBT.StrategyPattern without IoC.
 
 ```csharp
 public void GenericStrategyWorksInMemory()
