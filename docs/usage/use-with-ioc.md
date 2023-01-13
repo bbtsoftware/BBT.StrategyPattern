@@ -1,8 +1,6 @@
----
-Order: 30
-Title: Use with IoC
-Description: Example how to use BBT.StrategyPattern with IoC.
----
+# Use with IoC
+
+Example how to use BBT.StrategyPattern with IoC.
 
 ```csharp
 public void WorksWithIocNinject()

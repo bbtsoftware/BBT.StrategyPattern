@@ -1,10 +1,6 @@
----
-Order: 10
-Title: Obtain
-Description: Obtain BBT.StrategyPattern
----
+# Obtain
 
-# NuGet
+## NuGet
 
 Release and Beta versions of BBT.StrategyPattern are available from [nuget.org](https://www.nuget.org/packages/BBT.StrategyPattern)
 
