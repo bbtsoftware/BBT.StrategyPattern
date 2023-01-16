@@ -3,7 +3,7 @@
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>BBT.StrategyPattern</id>
     <title>BBT StrategyPattern</title>
-    <version>0.0.0</version>
+    <version>1.0.0</version>
     <authors>BBT Software AG</authors>
     <owners>bbtsoftware</owners>
     <summary>A strategy pattern implementation for .NET.</summary>
@@ -18,8 +18,11 @@
     <releaseNotes>https://github.com/bbtsoftware/BBT.StrategyPattern/releases/tag/1.0.0</releaseNotes>
   </metadata>
   <files>
-    <file src="netstandard2.0\BBT.StrategyPattern.dll" target="lib\netstandard2.0" />
-    <file src="netstandard2.0\BBT.StrategyPattern.pdb" target="lib\netstandard2.0" />
-    <file src="netstandard2.0\BBT.StrategyPattern.xml" target="lib\netstandard2.0" />
+    <file src="..\..\src\BBT.StrategyPattern\bin\Release\netstandard2.0\BBT.StrategyPattern.dll" target="lib\netstandard2.0" />
+    <file src="..\..\src\BBT.StrategyPattern\bin\Release\netstandard2.0\BBT.StrategyPattern.pdb" target="lib\netstandard2.0" />
+    <file src="..\..\src\BBT.StrategyPattern\bin\Release\netstandard2.0\BBT.StrategyPattern.xml" target="lib\netstandard2.0" />
+    <file src="..\..\src\BBT.StrategyPattern\bin\Release\net6.0\BBT.StrategyPattern.dll" target="lib\net6.0" />
+    <file src="..\..\src\BBT.StrategyPattern\bin\Release\net6.0\BBT.StrategyPattern.pdb" target="lib\net6.0" />
+    <file src="..\..\src\BBT.StrategyPattern\bin\Release\net6.0\BBT.StrategyPattern.xml" target="lib\net6.0" />
   </files>
 </package>

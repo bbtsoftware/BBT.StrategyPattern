@@ -33,10 +33,18 @@ namespace BBT.StrategyPattern
             // If no strategies for TStrategy can be found.
             if (!strategies.Any())
             {
-                throw new InvalidOperationException($"No strategies of {typeof(TStrategy).Name} are available from the locator.");
+                throw new InvalidOperationException($"No strategies of type {typeof(TStrategy).Name} are available from the locator.");
             }
 
-            return strategies.Single(x => x.IsResponsible(criterion));
+            var strategy = strategies.SingleOrDefault(x => x.IsResponsible(criterion));
+
+            // If no strategy responsible for TCriterion can be found.
+            if (strategy == null)
+            {
+                throw new InvalidOperationException($"No strategy of type {typeof(TStrategy).Name} available from the locator being responsible for criterion of type {typeof(TCriterion).Name}.");
+            }
+
+            return strategy;
         }
     }
 }
