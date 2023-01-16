@@ -3,11 +3,10 @@
 namespace BBT.StrategyPattern
 {
     using System;
-    using System.Globalization;
     using System.Linq;
 
     /// <summary>
-    /// See <see cref="IGenericStrategyProvider{TStrategy,TCriterion}"/>.
+    /// Generic implementation of <see cref="IGenericStrategyProvider{TStrategy,TCriterion}"/>.
     /// </summary>
     /// <typeparam name="TStrategy">See link above.</typeparam>
     /// <typeparam name="TCriterion">See link above.</typeparam>
@@ -26,11 +25,7 @@ namespace BBT.StrategyPattern
             this.strategyLocator = strategyLocator ?? throw new ArgumentNullException(nameof(strategyLocator));
         }
 
-        /// <summary>
-        /// See <see cref="IGenericStrategyProvider{TStrategy,TCriterion}.GetStrategy"/>.
-        /// </summary>
-        /// <param name="criterion">See <see cref="IGenericStrategyProvider{TStrategy,TCriterion}.GetStrategy"/>.</param>
-        /// <returns>See <see cref="IGenericStrategyProvider{TStrategy,TCriterion}.GetStrategy"/>.</returns>
+        /// <inheritdoc/>
         public TStrategy GetStrategy(TCriterion criterion)
         {
             var strategies = this.strategyLocator.GetAllStrategies();
@@ -38,10 +33,18 @@ namespace BBT.StrategyPattern
             // If no strategies for TStrategy can be found.
             if (!strategies.Any())
             {
-                throw new InvalidOperationException($"No strategies of {typeof(TStrategy).Name} are available from the locator.");
+                throw new InvalidOperationException($"No strategies of type {typeof(TStrategy).Name} are available from the locator.");
             }
 
-            return strategies.Single(x => x.IsResponsible(criterion));
+            var strategy = strategies.SingleOrDefault(x => x.IsResponsible(criterion));
+
+            // If no strategy responsible for TCriterion can be found.
+            if (strategy == null)
+            {
+                throw new InvalidOperationException($"No strategy of type {typeof(TStrategy).Name} available from the locator being responsible for criterion of type {typeof(TCriterion).Name}.");
+            }
+
+            return strategy;
         }
     }
 }
