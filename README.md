@@ -11,6 +11,11 @@ An strategy pattern implementation for .NET.
 
 ## Documentation
 
+### Resources about strategy pattern
+
+* [Wikipedia](https://en.wikipedia.org/wiki/Strategy_pattern)
+* [dofactory](https://www.dofactory.com/net/strategy-design-pattern)
+
 ### Getting started
 
 Overview about the features of BBT.StrategyPattern.
