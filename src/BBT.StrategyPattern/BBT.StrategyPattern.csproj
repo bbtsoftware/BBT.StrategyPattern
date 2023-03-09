@@ -3,14 +3,26 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <AssemblyTitle>BBT.StrategyPattern</AssemblyTitle>
-    <Company>BBT Software AG</Company>
-    <Product>BBT.StrategyPattern</Product>
-    <Description>A strategy pattern implementation for .NET</Description>
-    <Copyright>Copyright © BBT Software AG</Copyright>
     <CodeAnalysisRuleSet>..\BBT.StrategyPattern.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\$(Configuration)\BBT.StrategyPattern.XML</DocumentationFile>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <Title>BBT.StrategyPattern</Title>
+    <Description>A strategy pattern implementation for .NET</Description>
+    <Product>BBT.StrategyPattern</Product>
+    <Company>BBT Software AG</Company>
+    <Authors>BBT Software AG</Authors>
+    <Copyright>Copyright © BBT Software AG</Copyright>
+    <PackageTags>copy compare convert</PackageTags>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>http://bbtsoftware.github.io/BBT.StrategyPattern/</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/bbtsoftware/BBT.StrategyPattern.git</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/bbtsoftware/BBT.StrategyPattern/releases/tag/1.1.0</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
