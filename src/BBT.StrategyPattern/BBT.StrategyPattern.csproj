@@ -4,25 +4,28 @@
     <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <AssemblyTitle>BBT.StrategyPattern</AssemblyTitle>
     <CodeAnalysisRuleSet>..\BBT.StrategyPattern.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\$(Configuration)\BBT.StrategyPattern.XML</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\BBT.StrategyPattern.xml</DocumentationFile>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   
   <PropertyGroup>
-    <Title>BBT.StrategyPattern</Title>
-    <Description>A strategy pattern implementation for .NET</Description>
+    <Title>BBT StrategyPattern</Title>
+    <Description>A strategy pattern implementation for .NET.</Description>
     <Product>BBT.StrategyPattern</Product>
     <Company>BBT Software AG</Company>
     <Authors>BBT Software AG</Authors>
     <Copyright>Copyright © BBT Software AG</Copyright>
-    <PackageTags>copy compare convert</PackageTags>
+    <PackageId>BBT.StrategyPattern</PackageId>
+    <PackageTags>Strategy Pattern</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageProjectUrl>http://bbtsoftware.github.io/BBT.StrategyPattern/</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/bbtsoftware/BBT.StrategyPattern/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/bbtsoftware/BBT.StrategyPattern.git</RepositoryUrl>
     <PackageReleaseNotes>https://github.com/bbtsoftware/BBT.StrategyPattern/releases/tag/1.1.0</PackageReleaseNotes>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -32,6 +35,10 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="SauceControl.InheritDoc" Version="1.3.0">
