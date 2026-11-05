@@ -1,11 +1,11 @@
 ﻿// Copyright © BBT Software AG. All rights reserved.
 
+using System;
+using System.Collections.Generic;
+using Ninject;
+
 namespace BBT.StrategyPattern.Tests.WithIoc
 {
-    using System;
-    using System.Collections.Generic;
-    using Ninject;
-
     public class NinjectStrategyLocator<T> : IStrategyLocator<T>
     {
         public NinjectStrategyLocator(IKernel kernel)

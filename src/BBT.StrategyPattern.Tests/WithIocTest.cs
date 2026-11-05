@@ -1,15 +1,15 @@
 ﻿// Copyright © BBT Software AG. All rights reserved.
 
+using BBT.StrategyPattern.Tests.Data;
+using BBT.StrategyPattern.Tests.ExampleStrategyImpl;
+using BBT.StrategyPattern.Tests.WithIoc;
+using Ninject;
+using Shouldly;
+using System;
+using Xunit;
+
 namespace BBT.StrategyPattern.Tests
 {
-    using System;
-    using BBT.StrategyPattern.Tests.Data;
-    using BBT.StrategyPattern.Tests.ExampleStrategyImpl;
-    using BBT.StrategyPattern.Tests.WithIoc;
-    using FluentAssertions;
-    using Ninject;
-    using Xunit;
-
     public class WithIocTest
     {
         [Fact]
@@ -34,10 +34,10 @@ namespace BBT.StrategyPattern.Tests
             IOperatorStrategy strategy;
 
             strategy = kernel.Get<IGenericStrategyProvider<IOperatorStrategy, Operator>>().GetStrategy(op1);
-            strategy.DoCalculate(calc1).Should().Be(8);
+            strategy.DoCalculate(calc1).ShouldBe(8);
 
             strategy = kernel.Get<IGenericStrategyProvider<IOperatorStrategy, Operator>>().GetStrategy(op2);
-            strategy.DoCalculate(calc1).Should().Be(2);
+            strategy.DoCalculate(calc1).ShouldBe(2);
         }
 
         [Fact]
@@ -58,10 +58,8 @@ namespace BBT.StrategyPattern.Tests
             var act = () => kernel.Get<IGenericStrategyProvider<IOperatorStrategy, Operator>>().GetStrategy(op2);
 
             // Assert
-            act.Should()
-                .Throw<InvalidOperationException>()
-                .WithMessage("No strategies of type IOperatorStrategy are available from the locator.");
-
+            var ex = Should.Throw<InvalidOperationException>(act);
+            ex.Message.ShouldBe("No strategies of type IOperatorStrategy are available from the locator.");
         }
 
         [Fact]
@@ -85,9 +83,8 @@ namespace BBT.StrategyPattern.Tests
             var act = () => kernel.Get<IGenericStrategyProvider<IOperatorStrategy, Operator>>().GetStrategy(op2);
 
             // Assert
-            act.Should()
-                .Throw<InvalidOperationException>()
-                .WithMessage("No strategy of type IOperatorStrategy available from the locator being responsible for criterion of type Operator.");
+            var ex = Should.Throw<InvalidOperationException>(act);
+            ex.Message.ShouldBe("No strategy of type IOperatorStrategy available from the locator being responsible for criterion of type Operator.");
         }
     }
 }

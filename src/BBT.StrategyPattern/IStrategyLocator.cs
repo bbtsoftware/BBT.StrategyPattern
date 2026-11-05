@@ -1,9 +1,9 @@
 ﻿// Copyright © BBT Software AG. All rights reserved.
 
+using System.Collections.Generic;
+
 namespace BBT.StrategyPattern
 {
-    using System.Collections.Generic;
-
     /// <summary>
     /// Defines how strategies are located.
     /// </summary>
