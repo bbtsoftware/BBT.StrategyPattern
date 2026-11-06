@@ -1,10 +1,10 @@
 ﻿// Copyright © BBT Software AG. All rights reserved.
 
+using System;
+using System.Linq;
+
 namespace BBT.StrategyPattern
 {
-    using System;
-    using System.Linq;
-
     /// <summary>
     /// Generic implementation of <see cref="IGenericStrategyProvider{TStrategy,TCriterion}"/>.
     /// </summary>

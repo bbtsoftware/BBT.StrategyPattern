@@ -1,13 +1,13 @@
 ﻿// Copyright © BBT Software AG. All rights reserved.
 
+using BBT.StrategyPattern.Tests.Data;
+using BBT.StrategyPattern.Tests.ExampleStrategyImpl;
+using BBT.StrategyPattern.Tests.WithoutIoc;
+using Shouldly;
+using Xunit;
+
 namespace BBT.StrategyPattern.Tests
 {
-    using BBT.StrategyPattern.Tests.Data;
-    using BBT.StrategyPattern.Tests.ExampleStrategyImpl;
-    using BBT.StrategyPattern.Tests.WithoutIoc;
-    using FluentAssertions;
-    using Xunit;
-
     public class WithoutIocTest
     {
         [Fact]
@@ -23,10 +23,10 @@ namespace BBT.StrategyPattern.Tests
             IOperatorStrategy strategy;
 
             strategy = strategyProvider.GetStrategy(op1);
-            strategy.DoCalculate(calc1).Should().Be(8);
+            strategy.DoCalculate(calc1).ShouldBe(8);
 
             strategy = strategyProvider.GetStrategy(op2);
-            strategy.DoCalculate(calc1).Should().Be(2);
+            strategy.DoCalculate(calc1).ShouldBe(2);
         }
     }
 }

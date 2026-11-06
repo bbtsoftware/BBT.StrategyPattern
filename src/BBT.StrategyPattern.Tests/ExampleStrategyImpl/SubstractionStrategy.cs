@@ -1,10 +1,10 @@
 ﻿// Copyright © BBT Software AG. All rights reserved.
 
+using BBT.StrategyPattern.Tests.Data;
+using Shouldly;
+
 namespace BBT.StrategyPattern.Tests.ExampleStrategyImpl
 {
-    using BBT.StrategyPattern.Tests.Data;
-    using FluentAssertions;
-
     public class SubstractionStrategy : IOperatorStrategy
     {
         public double DoCalculate(CalculationInput calc)
@@ -14,7 +14,7 @@ namespace BBT.StrategyPattern.Tests.ExampleStrategyImpl
 
         public bool IsResponsible(Operator criterion)
         {
-            criterion.Should().NotBeNull();
+            criterion.ShouldNotBeNull();
 
             return criterion.Operation == OperatorEnum.Subtraktion;
         }

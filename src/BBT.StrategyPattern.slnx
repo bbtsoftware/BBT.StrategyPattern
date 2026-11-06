@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BBT.StrategyPattern.Tests/BBT.StrategyPattern.Tests.csproj" />
+  <Project Path="BBT.StrategyPattern/BBT.StrategyPattern.csproj" />
+</Solution>
