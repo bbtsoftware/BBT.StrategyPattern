@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup>
+	<Company>BBT Software AG</Company>
+	<Product>BBT.StrategyPattern</Product>
+	<Copyright>Copyright © BBT Software AG</Copyright>
+	<OutputPath>bin\$(Configuration)\</OutputPath>
+	<EnableNETAnalyzers>true</EnableNETAnalyzers>
+	<AnalysisLevel>latest-recommended</AnalysisLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+	<DebugType>full</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+	<DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+</Project>

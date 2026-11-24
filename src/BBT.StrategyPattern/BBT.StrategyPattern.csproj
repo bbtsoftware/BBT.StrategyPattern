@@ -3,19 +3,14 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net10.0</TargetFrameworks>
     <AssemblyTitle>BBT.StrategyPattern</AssemblyTitle>
-    <CodeAnalysisRuleSet>..\BBT.StrategyPattern.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\$(Configuration)\BBT.StrategyPattern.xml</DocumentationFile>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   
   <PropertyGroup>
     <Title>BBT StrategyPattern</Title>
     <Description>A strategy pattern implementation for .NET.</Description>
-    <Product>BBT.StrategyPattern</Product>
-    <Company>BBT Software AG</Company>
     <Authors>BBT Software AG</Authors>
-    <Copyright>Copyright © BBT Software AG</Copyright>
     <PackageId>BBT.StrategyPattern</PackageId>
     <PackageTags>Strategy Pattern</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
@@ -28,20 +23,13 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>full</DebugType>
-  </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-  </PropertyGroup>
-  
   <ItemGroup>
     <None Include="icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SauceControl.InheritDoc" Version="2.0.2">
+    <PackageReference Include="SauceControl.InheritDoc">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -53,8 +41,4 @@
     </AssemblyAttribute>
   </ItemGroup>
 
-  <PropertyGroup>
-    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
-  </PropertyGroup>  
-  
 </Project>
